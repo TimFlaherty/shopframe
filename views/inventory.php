@@ -29,7 +29,6 @@ function allitems() {
 
 //Displays inventory
 function edit(id) {
-	alert(id);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -40,6 +39,27 @@ function edit(id) {
 	xmlhttp.send();	
 }
 
+//Displays inventory
+function mod(field, orig) {
+	document.getElementById(field).innerHTML = 
+		'<input type="text" id="new'+field+'" value="'+orig+'">'
+		+'<button value="'+field+'" onclick="update(this.value)">Update</button>';
+}
+
+//Displays inventory
+function update(target) {
+	newval = document.getElementById("new"+target).value;
+	id = document.getElementById("itemid").innerHTML;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			edit(id);
+		}
+	};
+	xmlhttp.open("POST", "../controllers/moditem.php?id="+id+"&target="+target+"&newval="+newval, true);
+	xmlhttp.send();	
+}
+
 showhead();
 allitems();
 </script>
@@ -47,6 +67,7 @@ allitems();
 
 <body>
 <div id="head"></div>
+<p><button onclick="allitems()">Show All Items</button></p>
 <div id="disp"></div>
 </body>
 </html>
