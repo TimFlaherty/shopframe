@@ -79,7 +79,7 @@ function newitem() {
 	cat = document.getElementById("newcat").value;
 	subcat = document.getElementById("newsubcat").value;
 	desc = document.getElementById("newdescription").value;
-	alert(name);
+	
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -92,6 +92,20 @@ function newitem() {
 		+"&subcat="+subcat
 		+"&desc="+desc, true);
 	xmlhttp.send();	
+}
+
+//Removes inventory item
+function deleteitem(id) {
+	if (confirm("Delete item? This cannot be undone.")) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				allitems();
+			}
+		};
+		xmlhttp.open("POST", "../controllers/deleteitem.php?id=" + id, true);
+		xmlhttp.send();	
+	}
 }
 
 showhead();
