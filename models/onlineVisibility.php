@@ -1,6 +1,6 @@
 <?php
-require('../lib/mvc.php');
-require(controllers.'handler.php');
+include('../lib/mvc.php');
+include(controllers.'handler.php');
 //Administrative control class
 class onlineVisibility extends handler {
 	//Fetches online store display parameters
