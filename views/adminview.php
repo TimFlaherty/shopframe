@@ -14,6 +14,7 @@ if($access < 3) {
 </head>
 <body>
 <h1>Admin Page</h1>
+<a href="../controllers/logout.php"><button>Log Out</button></a>
 <p><button onclick="onlineVis()">Online Visibility Settings</button></p>
 <p><button onclick="inv()">Inventory Management</button></p>
 <div id="disp"></div>

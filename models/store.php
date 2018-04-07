@@ -8,5 +8,10 @@ class store extends handler {
 		$stocktable = $this->conn->prepare('CREATE VIEW store_stock_'.$this->id.' AS SELECT * FROM stock WHERE storeid = '.$this->id);
 		$stocktable->execute();
 	}
+	
+	//Return store info for all stores
+	public function getstores() {
+		return $this->readAll('storeid, storename','stores','storeid','storeid');
+	}
 }
 ?>
