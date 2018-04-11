@@ -62,6 +62,20 @@ function updatestock(row) {
 		+"&amount="+amount, true);
 	xmlhttp.send();	
 }
+
+//Display employee ID and store
+function empinfo() {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("empinfo").innerHTML = this.responseText;
+		}
+	};
+	xmlhttp.open("GET", "../views/empinfo.php", true);
+	xmlhttp.send();		
+}
+
+empinfo()
 </script>
 </head>
 <body>
@@ -69,6 +83,7 @@ function updatestock(row) {
 <a href="../controllers/logout.php"><button>Log Out</button></a>
 <p><button onclick="checkout()">Checkout</button></p>
 <p><button onclick="stockUI()">Manage Stock</button></p>
+<div id="empinfo"></div>
 <div id="disp"></div>
 </body>
 </html>
