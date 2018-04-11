@@ -70,4 +70,5 @@ function viscontrol() {
 	
 	echo '<p><input type="submit" value="Update Visibility"></input></p></form>';
 }
+viscontrol();
 ?>

@@ -1,8 +1,9 @@
 <?php
-require('../lib/mvc.php');
+include('../lib/mvc.php');
 //require(controllers.'handler.php');
+include(models.'iUser.php');
 //Simple user model
-class user extends handler {
+class user extends handler implements iUser {
 	//Class variables
 	public $uid;
 	public $uname;

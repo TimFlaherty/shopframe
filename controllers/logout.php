@@ -1,5 +1,6 @@
 <?php 
+require('../lib/mvc.php');
 session_start();
 session_destroy();
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ../views/login.php');
 ?>

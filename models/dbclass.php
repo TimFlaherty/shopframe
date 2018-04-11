@@ -60,7 +60,7 @@ class dbconn {
 	
 	//Update table
 	public function update($table, $field, $newval, $target, $val) {
-		$sqlread = $this->conn->prepare('UPDATE '.$table.' SET '.$field.' = '.$newval.' WHERE '.$target.' = '.$val);
+		$sqlread = $this->conn->prepare('UPDATE '.$table.' SET '.$field.' = "'.$newval.'" WHERE '.$target.' = '.$val);
 		$sqlread->execute();
 		return TRUE;//."<br>".$errcode;
 	}

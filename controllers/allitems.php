@@ -5,7 +5,7 @@ require(models.'inventoryclass.php');
 $inv = new inventory();
 $all = $inv->allitems();
 
-echo '<table><tr><th>Item ID</th><th>Item Name</th><th>Price</th><th>Category</th><th>Subcategory</th><th>Description</th><th>Edit</th></tr>';
+echo '<table><tr><th>Item ID</th><th>Item Name</th><th>Price</th><th>Category</th><th>Subcategory</th><th>Description</th><th>Edit</th><th>Delete</th></tr>';
 foreach($all as $item) {
 	echo '<tr><td>'
 		.$item['itemid']
@@ -22,6 +22,8 @@ foreach($all as $item) {
 		.$item['description']
 		.'</td><td>'
 		.'<button value="'.$item['itemid'].'" onclick="edit(this.value)">Edit</button>'
+		.'</td><td>'
+		.'<button value="'.$item['itemid'].'" onclick="deleteitem(this.value)">Delete</button>'
 		.'</td></tr>';
 }
 echo '</table>';

@@ -6,21 +6,24 @@ $id = $_REQUEST['id'];
 $inv = new inventory();
 $item = $inv->showitem($id);
 
-echo '<table><tr><th>Item ID</th><th>Item Name</th><th>Price</th><th>Category</th><th>Subcategory</th><th>Description</th><th>Edit</th></tr>';
-echo '<tr><td>'
+echo '<table><tr><th>Item ID</th><th>Item Name</th><th>Price</th><th>Category</th><th>Subcategory</th><th>Description</th></tr>';
+echo '<tr><td id="itemid">'
 	.$item['itemid']
-	.'</td><td>'
+	.'</td><td id="itemname">'
 	.$item['itemname']
-	.'</td><td>'
+	.'<button value="itemname" onclick="mod(this.value, &quot;'.$item['itemname'].'&quot;)">Change</button>'
+	.'</td><td id="itemprice">'
 	.$item['itemprice']
-	.'</td><td>'
+	.'<button value="itemprice" onclick="mod(this.value, &quot;'.$item['itemprice'].'&quot;)">Change</button>'
+	.'</td><td id="cat">'
 	.$item['cat']
-	.'</td><td>'
+	.'<button value="cat" onclick="mod(this.value, &quot;'.$item['cat'].'&quot;)">Change</button>'
+	.'</td><td id="subcat">'
 	.$item['subcat']
-	.'</td><td>'
+	.'<button value="subcat" onclick="mod(this.value, &quot;'.$item['subcat'].'&quot;)">Change</button>'
+	.'</td><td id="description">'
 	.$item['description']
-	.'</td><td>'
-	.'<button value="'.$item['itemid'].'" onclick="edit(this.value)">Edit</button>'
+	.'<button value="description" onclick="mod(this.value, &quot;'.$item['description'].'&quot;)">Change</button>'
 	.'</td></tr>';
 echo '</table>';
 ?>

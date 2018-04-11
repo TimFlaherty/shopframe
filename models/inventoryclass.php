@@ -1,7 +1,7 @@
 <?php
 //Inventory class
-require('../lib/mvc.php');
-require(controllers.'handler.php');
+include('../lib/mvc.php');
+include(controllers.'handler.php');
 
 class inventory extends handler {
 	//Return inventory data
