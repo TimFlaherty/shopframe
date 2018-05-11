@@ -5,6 +5,7 @@ echo '<p><a href="index.php">Home</a></p>';
 if(!isset($_SESSION['uid']) && empty($_SESSION['uid'])) {
 	echo '<a href="login.php"><button>Log In</button></a>';
 } else {
+	echo '<p>Hello '.$_SESSION["uname"].'!</p>';
 	echo '<a href="../controllers/logout.php"><button>Log Out</button></a>';
 }
 if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
