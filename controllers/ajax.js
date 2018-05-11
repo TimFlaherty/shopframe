@@ -14,7 +14,7 @@ function display(cat) {
 function add(item) {
 	var qnt = document.getElementById("qnt"+item).value;
 	var name = encodeURI(document.getElementById("name"+item).innerHTML);
-	var price = document.getElementById("price"+item).innerHTML;
+	var price = document.getElementById("price"+item).innerHTML.substring(1);
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
