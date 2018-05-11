@@ -42,6 +42,7 @@ session_start();
 </table>
 <input type="submit" value="Log In">
 </form>
+<a href="register.php"><input type="button" value="Register"></a>
 <h3>Username:Password Combinations for Testing</h3>
 <p>admin:cs130b</p>
 <p>employee:employed</p>
@@ -49,6 +50,6 @@ session_start();
 <a href="?source"><input type="button" value="View Page Source"></a> 
 <br> 
 <br> 
-<a href="https://hills.ccsf.edu/~tflaher2/cs130b/index.php"><input type="button" value="Return to Index"></a> 
+<a href="index.php"><input type="button" value="Home"></a> 
 </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 echo '<h1>Cool Store</h1>';
 echo '<p><a href="index.php">Home</a></p>';
 if(!isset($_SESSION['uid']) && empty($_SESSION['uid'])) {
-	echo '<a href="login.php" target="_blank"><button>Log In</button></a>';
+	echo '<a href="login.php"><button>Log In</button></a>';
 } else {
 	echo '<a href="../controllers/logout.php"><button>Log Out</button></a>';
 }
