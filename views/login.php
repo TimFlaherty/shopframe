@@ -1,25 +1,4 @@
 <?php
-// Display source files 
-if (isset($_GET['source'])) { 
-    echo '<h1>login.php</h1>'; 
-    highlight_file($_SERVER['SCRIPT_FILENAME']); 
-    echo '<h1>logfunc.php</h1>'; 
-    highlight_file('../controllers/logfunc.php'); 
-    echo '<h1>user.php</h1>'; 
-    highlight_file('../models/user.php');
-    echo '<h1>adminview.php</h1>'; 
-    highlight_file('adminview.php');
-    echo '<h1>employeeview.php</h1>'; 
-    highlight_file('employeeview.php');  
-    echo '<h1>customerview.php</h1>'; 
-    highlight_file('customerview.php');  
-    echo '<h1>handler.php</h1>'; 
-    highlight_file('../controllers/handler.php');  
-    echo '<h1>dbclass.php</h1>'; 
-    highlight_file('../models/dbclass.php');
-    exit; 
-} 
-
 session_start(); 
 ?>
 <html>
@@ -47,9 +26,6 @@ session_start();
 <p>admin:cs130b</p>
 <p>employee:employed</p>
 <p>customer:shopping</p>
-<a href="?source"><input type="button" value="View Page Source"></a> 
-<br> 
-<br> 
 <a href="index.php"><input type="button" value="Home"></a> 
 </body>
 </html>

@@ -1,17 +1,22 @@
 <?php
 /*User Registration Function*/
-require('../lib/mvc.php');
-require(controllers.'handler.php');
-require(lib.'cryptr.php');
+include('../lib/mvc.php');
+include(controllers.'handler.php');
+include(lib.'cryptr.php');
 
 //Connect to db
 $dbconn = new handler();
 
-$uname = $_POST['uname'];
-$pass = cryptr('encrypt',$_POST['pswd']);
-$email = $_POST['email'];
+$uname = $_REQUEST['uname'];
+$pass = cryptr('encrypt',$_REQUEST['pswd']);
+$email = $_REQUEST['email'];
 
 $dbconn->write("usr", array(NULL, $uname, $pass, 1, $email));
 
-header('Location: ../views/login.php');
+session_start();
+$_SESSION['uid'] = $dbconn->id;
+$_SESSION['uname'] = $uname;
+$_SESSION['access'] = 1;
+
+header('Location: ../views/index.php');
 ?>
