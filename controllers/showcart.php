@@ -13,7 +13,7 @@ foreach($cart as $item) {
 		.'</td><td id="qntcell'.(int)$item['item'].'">'
 		.'<a href="#" id="qnt'.(int)$item['item'].'" onclick="modqnt('.(int)$item['item'].');">'
 		.$item['qnt']
-		.'</a><br><button onclick="remove('.(int)$item['item'].')">Remove</button>'
+		.'</a><br><a href="../controllers/remove.php?item='.(int)$item['item'].'"><button>Remove</button></a>'
 		.'</td><td>$'
 		.number_format(($item['price']*$item['qnt']), 2)
 		.'</td></tr>';

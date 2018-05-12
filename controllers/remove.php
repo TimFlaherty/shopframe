@@ -6,4 +6,5 @@ $cart = new cart();
 $item = $_REQUEST["item"];
 
 $cart->remove($item);
+header('Location: ../views/viewcart.php');
 ?>
