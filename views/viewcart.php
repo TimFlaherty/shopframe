@@ -49,16 +49,15 @@ function modqnt(item) {
 		+ '<br><br><button onclick="modqntjax('+item+')">Update</button>';
 }
 
-//AJAX function removes item
-function remove(item) {
+//AJAX function saves cart
+function save() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			showhead();
-			showcart();
+			alert(this.responseText);
 		}
 	};
-	xmlhttp.open("POST", "../controllers/remove.php?item="+item, true);
+	xmlhttp.open("GET", "../controllers/savecart.php", true);
 	xmlhttp.send();	
 }
 
