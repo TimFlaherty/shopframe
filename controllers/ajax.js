@@ -1,5 +1,7 @@
 //AJAX function accepts category and returns all items from same
 function display(cat) {
+	$(".btn").removeClass("btn-outline-info");
+	$("#"+cat).addClass("btn-outline-info");
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
