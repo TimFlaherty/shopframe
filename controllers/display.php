@@ -10,7 +10,7 @@ foreach($result as $item) {
 	echo '<p id="price'.$item['itemid'].'" value="'.$item['itemprice'].'">$'.$item['itemprice'].'</p>';
 	echo '<p>'.$item['description'].'</p>';
 	echo '<p>Quantity: <input id="qnt'.$item['itemid'].'" type="number" name="qnt" min="1" max="10" value="1"></p>';
-	echo '<button value="'.$item['itemid'].'" onclick="add(this.value)">Add to cart</button>';
+	echo '<button class="btn" value="'.$item['itemid'].'" onclick="add(this.value)">Add to cart</button>';
 	echo '</div>';
 }
 ?>

@@ -8,3 +8,8 @@ table, td, th {
 .thumb {
 	width:200px;
 }
+
+.container {
+	padding-top:75px;
+	padding-bottom:25px;
+}
