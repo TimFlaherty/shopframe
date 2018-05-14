@@ -5,7 +5,7 @@ function showcats() {
 	echo '<h3>Categories</h3>';
 	foreach($cats as $cat){
 		$cat = (string)$cat['cat'];
-		echo '<button class="btn" value="'.$cat.'" onclick="display(this.value);">'.$cat.'</button>';
+		echo '<button class="btn" id="'.$cat.'" value="'.$cat.'" onclick="display(this.value);">'.$cat.'</button>';
 	}
 }
 ?>
