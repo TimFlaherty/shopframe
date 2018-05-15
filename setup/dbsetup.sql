@@ -128,6 +128,9 @@ INSERT INTO usr VALUES
 (NULL, 'employee', 'YW5MRlM1ZStEc05WNWNFRjdTN3BMUT09', 2, NULL),
 (NULL, 'customer', 'RDJsREg2YjhmdkdHMWZlZDl3aGpTQT09', 1, NULL);
 
+INSERT INTO address VALUES 
+(NULL, 1, '123 Admin Street', NULL, 'San Francisco', 'CA', 'USA', '94109');
+
 INSERT INTO stores VALUES 
 (NULL, 'location1', '123 Test Street', NULL, 'San Francisco', 'CA', '94109'),
 (NULL, 'location2', '22 Hypothetical Place', 'Suite 800', 'San Francisco', 'CA', '94109');

@@ -26,7 +26,7 @@ if($result['pwd'] == $pass) {
 	}else if($route == 2){
 		header('Location: ../views/employeeview.php');
 	}else if($route == 1){
-		header('Location: ../views/customerview.php');
+		header('Location: ../views/index.php');
 	};
 } else {
 	echo 'Incorrect Password';

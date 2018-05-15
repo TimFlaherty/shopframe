@@ -42,7 +42,7 @@ class onlineVisibility extends handler {
 			//Checks for store parameter and incorporates in to query
 			if($param == 'store'){
 				$sqlvars .= 'JOIN stores c ON a.storeid = c.storeid AND c.storename IN(';
-				foreach($params[store] as $store) {
+				foreach($params['store'] as $store) {
 					$sqlvars .= '"'.$store.'",';
 				}
 				$sqlvars = rtrim($sqlvars, ', ');
@@ -51,7 +51,7 @@ class onlineVisibility extends handler {
 			//Checks for in-store location parameter and incorporates in to query
 			if($param == 'location'){
 				$sqlvars .= 'AND a.location IN(';
-				foreach($params[location] as $location) {
+				foreach($params['location'] as $location) {
 					$sqlvars .= '"'.$location.'",';
 				}
 				$sqlvars = rtrim($sqlvars, ', ');
@@ -83,7 +83,7 @@ class onlineVisibility extends handler {
 		}
 		$sqlvars .= ' GROUP BY a.itemid';
 		$sql .= $sqlvars;
-		
+
 		//Execute query and redirect back to admin page
 		$query = $this->conn->prepare($sql);
 		$query->execute();
