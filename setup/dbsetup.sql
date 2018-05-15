@@ -30,13 +30,15 @@ UNIQUE (uname)
 );
 
 CREATE TABLE address (
-uid INT(8) ZEROFILL NOT NULL PRIMARY KEY,
+addressid INT(8) ZEROFILL NOT NULL AUTO_INCREMENT PRIMARY KEY,
+uid INT(8) ZEROFILL NOT NULL,
 address1 VARCHAR(40) NOT NULL,
 address2 VARCHAR(27),
 city VARCHAR(27) NOT NULL,
 state VARCHAR(27) NOT NULL,
 country VARCHAR(84) NOT NULL,
-type VARCHAR(27) NOT NULL
+type VARCHAR(27) NOT NULL,
+FOREIGN KEY (uid) REFERENCES usr(uid)
 );
 
 CREATE TABLE stores (
@@ -64,6 +66,15 @@ location ENUM('FLOOR', 'BACK'),
 amount INT(5),
 FOREIGN KEY (storeid) REFERENCES stores(storeid),
 FOREIGN KEY (itemid) REFERENCES inventory(itemid)
+);
+
+CREATE TABLE orders (
+orderid INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+uid INT(8) ZEROFILL,
+addressid INT(8) ZEROFILL NOT NULL,
+paymentid VARCHAR(8) NOT NULL,
+FOREIGN KEY (uid) REFERENCES usr(uid),
+FOREIGN KEY (addressid) REFERENCES address(addressid)
 );
 
 CREATE TABLE adminsettings (
