@@ -25,7 +25,8 @@ if($access < 2) {
 	</nav>
 	<h1>Employee Page</h1>
 	<!-- <p><button onclick="checkout()">Checkout</button></p> -->
-	<p><button onclick="stockUI()">Manage Stock</button></p>
+	<p><button class="btn" onclick="stockUI()">Manage Stock</button></p>
+	<p><button class="btn" onclick="stockitem()">Stock Item from Inventory</button></p>
 	<div id="empinfo"></div>
 	<div id="disp"></div>
 </div>

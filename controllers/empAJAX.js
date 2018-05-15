@@ -49,6 +49,50 @@ function updatestock(row) {
 	xmlhttp.send();	
 }
 
+//Stock item from inventory
+function stockitem() {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("disp").innerHTML = this.responseText;
+		}
+	};
+	xmlhttp.open("POST", "../controllers/stockitem.php", true);
+	xmlhttp.send();		
+}
+
+//Stock item from inventory
+function stockitemUI(id) {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("disp").innerHTML = this.responseText;
+		}
+	};
+	xmlhttp.open("POST", "../controllers/stockitemUI.php?itemid="+id, true);
+	xmlhttp.send();		
+}
+
+//Stock item from inventory
+function stockit() {
+	itemid = $("#itemid").html();
+	storeid = $("#store").val();
+	loc = $("#location").val();
+	amount = $("#amount").val();
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			alert(this.responseText);
+			stockUI();
+		}
+	};
+	xmlhttp.open("POST", "../controllers/newstock.php?itemid="+itemid
+		+"&storeid="+storeid
+		+"&location="+loc
+		+"&amount="+amount, true);
+	xmlhttp.send();		
+}
+
 //Display employee ID and store
 function empinfo() {
 	var xmlhttp = new XMLHttpRequest();

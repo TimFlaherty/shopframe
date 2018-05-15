@@ -1,7 +1,7 @@
 <?php
 //Store class
-require('../lib/mvc.php');
-require(controllers.'handler.php');
+include_once('../lib/mvc.php');
+include_once(controllers.'handler.php');
 class store extends handler {
 	public function newstore($sname, $addr) {
 		$this->write('stores', array(NULL,$sname,$addr['ln1'],$addr['ln2'],$addr['city'],$addr['state'],$addr['zip']));
