@@ -1,6 +1,6 @@
 <?php
-include('../lib/mvc.php');
-include(controllers.'handler.php');
+include_once('../lib/mvc.php');
+include_once(controllers.'handler.php');
 class stock extends handler {
 	//Get stock info for a given store
 	public function showstock($storeid) {
@@ -19,6 +19,11 @@ class stock extends handler {
 	//Modify stock quantity
 	public function modstock($itemid, $storeid, $location, $amount) {
 		$this->update('stock', 'amount', $amount, 'storeid', $storeid.' AND location = "'.$location.'" AND itemid = '.$itemid);
+	}
+	
+	//Stock new item
+	public function newitem($itemid, $storeid, $location, $amount) {
+		$this->write('stock', array($storeid, $itemid, $location, $amount));
 	}
 }
 ?>
