@@ -21,5 +21,5 @@ foreach($cart as $item) {
 }
 echo '<tr><th colspan="3">Order Total: </th><td><b>$'.number_format($total, 2).'</b></td></tr>';
 echo '</table>';
-echo '<p><button class="btn" onclick="save()">Save Cart</button>';
+echo '<p><button class="btn" onclick="save()">Save Cart</button><a href="../controllers/checkout.php"><button class="btn">Checkout</button></a></p>';
 ?>

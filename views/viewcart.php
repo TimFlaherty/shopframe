@@ -47,7 +47,7 @@ function modqnt(item) {
 	qnt = document.getElementById('qnt'+item).innerHTML;
 	
 	document.getElementById('qntcell'+item).innerHTML = 
-		'<input type="number" id="newqnt'+item+'">'
+		'<input type="number" min="0" id="newqnt'+item+'">'
 		+ '<br><br><button onclick="modqntjax('+item+')">Update</button>';
 }
 

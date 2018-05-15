@@ -30,13 +30,15 @@ UNIQUE (uname)
 );
 
 CREATE TABLE address (
-uid INT(8) ZEROFILL NOT NULL PRIMARY KEY,
+addressid INT(8) ZEROFILL NOT NULL AUTO_INCREMENT PRIMARY KEY,
+uid INT(8) ZEROFILL NOT NULL,
 address1 VARCHAR(40) NOT NULL,
 address2 VARCHAR(27),
 city VARCHAR(27) NOT NULL,
 state VARCHAR(27) NOT NULL,
 country VARCHAR(84) NOT NULL,
-type VARCHAR(27) NOT NULL
+type VARCHAR(27) NOT NULL,
+FOREIGN KEY (uid) REFERENCES usr(uid)
 );
 
 CREATE TABLE stores (
@@ -64,6 +66,15 @@ location ENUM('FLOOR', 'BACK'),
 amount INT(5),
 FOREIGN KEY (storeid) REFERENCES stores(storeid),
 FOREIGN KEY (itemid) REFERENCES inventory(itemid)
+);
+
+CREATE TABLE orders (
+orderid INT(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+uid INT(8) ZEROFILL,
+addressid INT(8) ZEROFILL NOT NULL,
+paymentid VARCHAR(8) NOT NULL,
+FOREIGN KEY (uid) REFERENCES usr(uid),
+FOREIGN KEY (addressid) REFERENCES address(addressid)
 );
 
 CREATE TABLE adminsettings (
@@ -116,6 +127,9 @@ INSERT INTO usr VALUES
 (NULL, 'admin', 'NWRMMjZtZXozdkxUNFVqQ25lZC9adz09', 3, NULL),
 (NULL, 'employee', 'YW5MRlM1ZStEc05WNWNFRjdTN3BMUT09', 2, NULL),
 (NULL, 'customer', 'RDJsREg2YjhmdkdHMWZlZDl3aGpTQT09', 1, NULL);
+
+INSERT INTO address VALUES 
+(NULL, 1, '123 Admin Street', NULL, 'San Francisco', 'CA', 'USA', '94109');
 
 INSERT INTO stores VALUES 
 (NULL, 'location1', '123 Test Street', NULL, 'San Francisco', 'CA', '94109'),
